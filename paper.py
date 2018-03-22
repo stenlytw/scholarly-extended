@@ -1,6 +1,7 @@
 import scholarly
 import os
 import csv
+import io
 
 def paper(filename):	
 	search_query = scholarly.search_pubs_query(filename)
@@ -22,7 +23,7 @@ def main():
 					
 			data = []
 			data.append(number)
-			data.append(bib.get('title', '-'))
+			data.append(bib.get('title', '-').encode("ascii", errors="ignore"))
 			data.append(bib.get('author', '-'))
 			data.append(bib.get('year', '-'))
 			data.append(citedby)
@@ -42,8 +43,7 @@ def main():
 			
 			myData.append(data)
 		
-	myFile = open('papers.csv', 'wb')
-	with myFile:
+	with io.open('papers.csv', 'wb') as myFile:
 		writer = csv.writer(myFile)
 		writer.writerows(myData)		
 
