@@ -6,3 +6,6 @@ This is a small tool based on [scholarly](https://github.com/OrganicIrradiation/
 - Put all of the  papers and `paper.py` file  in one folder.
 - All of the papers should be named with its title in PDF format.
 - Run `paper.py`, it will ouput csv file `papers.csv`.
+
+![screenshot](https://raw.githubusercontent.com/stenlytw/scholarly-extended/master/screenshot.png)
+
